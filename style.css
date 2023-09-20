@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+/* font-family: 'Libre Franklin', sans-serif; */
+
+:root {
+  --Blue: hsl(223, 87%, 63%);
+  --Pale-Blue: hsl(223, 100%, 88%);
+  --Light-Red: hsl(354, 100%, 66%);
+  --Gray: hsl(0, 0%, 59%);
+  --Very-Dark-Blue: hsl(209, 33%, 12%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  font-size: 20px;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.logo {
+  margin: 3rem 0 2.5rem 0;
+}
+
+.top-section {
+  text-align: center;
+  color: var(--Very-Dark-Blue);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.top-section h1 {
+  font-size: 3rem;
+}
+
+.top-section h1 span {
+  color: var(--Gray);
+  font-weight: 300;
+}
+
+.notify-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  position: relative;
+}
+
+.error-msg {
+  display: none;
+  color: rgb(236, 82, 82);
+  font-size: 12px;
+  position: absolute;
+  width: 100%;
+  bottom: -20px;
+  left: 34%;
+  font-weight: 600;
+}
+
+.error-msg.active {
+  display: block;
+}
+
+
+input.active{
+  border-color: rgb(236, 82, 82);
+}
+
+.success-msg {
+  display: none;
+  color: rgb(118, 214, 101);
+  font-size: 12px;
+  position: absolute;
+  width: 100%;
+  bottom: -20px;
+  left: 34%;
+  font-weight: 600;
+}
+
+.success-msg.active {
+  display: block;
+}
+
+.input.active {
+  color: red;
+  outline: red;
+  border-color: red;
+}
+
+.notify-container input {
+  border: 1px solid #ccc;
+  padding: 1rem 1.2rem;
+  width: 25%;
+  border-radius: 30px;
+  outline-color: #ccc;
+}
+
+.notify-container input::placeholder {
+  opacity: 0.5;
+}
+
+.notify-container button {
+  border: none;
+  color: #fff;
+  background-color: var(--Blue);
+  padding: 1rem;
+  width: 10%;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 300;
+  transition: all 0.3s ease-in-out;
+}
+
+.notify-container button:active {
+  transform: scale(0.9);
+}
+
+.notify-container button:hover {
+  background-color: hsl(223, 100%, 72%);
+}
+
+.bottom-section {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bottom-section img {
+  width: 45%;
+}
+
+.bottom-section .social {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.bottom-section .social i {
+  padding: 1rem;
+  margin: 0 0.5rem;
+  border: 1px solid #ccc;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 100%;
+  color: var(--Blue);
+  cursor: pointer;
+  transition: all 0.4s ease-in;
+}
+
+.social i:hover {
+  background-color: var(--Blue);
+  color: #fff;
+  transform: rotate(360deg);
+}
+
+.bottom-section small {
+  font-size: 15px;
+  color: var(--Gray);
+}
+
+@media only screen and (max-width: 425px) {
+  .top-section h1 {
+    font-size: 2rem;
+  }
+  .logo {
+    margin-top: rem;
+  }
+  .top-section p {
+    font-size: 1rem;
+  }
+  .bottom-section img {
+    width: 100%;
+    padding: 0 1rem;
+    margin-bottom: 5rem;
+  }
+  .notify-container {
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+  .notify-container button,
+  .notify-container input {
+    width: 100%;
+  }
+  .success-msg,.error-msg{
+    left: 27%;
+  }
+}
